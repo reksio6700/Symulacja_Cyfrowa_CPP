@@ -1,2 +1,2 @@
 # SC
-Wymagane wsparcie
+Wymagane wsparcie, please halp
