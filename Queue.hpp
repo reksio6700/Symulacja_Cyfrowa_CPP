@@ -4,9 +4,12 @@
 class Queue
 {
 	private:
-
+		int maxSize;
+		//fifo
 
 	public:
 		Queue();
 		~Queue();
+
+		
 };

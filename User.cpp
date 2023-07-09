@@ -10,6 +10,22 @@ std::normal_distribution<> normal(0, 4);
 
 User::User()
 {
+	this->powerToBS1 = 0;
+	this->powerToBS2 = 0;
+	this->velocity = 0;
+	this->distance = 0;
+	this->TimeToSwitch = 0;
+	this->currentBTS = 0;
+}
+
+User::User(int newVelocity)
+{
+	this->powerToBS1 = -70.0;
+	this->powerToBS2 = -70.0;
+	this->velocity = newVelocity;
+	this->distance = 2000.0;
+	this->TimeToSwitch = 0;
+	this->currentBTS = 1;
 }
 
 User::~User()
