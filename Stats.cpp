@@ -6,6 +6,8 @@ int TTT = 20;
 int MAXUSERS = 40;
 double LAMBDA = 0.1;
 
+long int CLOCK = 0;
+
 bool DEBUG = true;
 bool WRITEFILE = true;
 
