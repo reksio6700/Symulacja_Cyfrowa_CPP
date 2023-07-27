@@ -14,7 +14,7 @@ class User
 
 	public:
 		User();
-		User(int newVelocity);
+		User(int newVelocity, int time);
 		~User();
 
 		void setBS1(int power);
@@ -32,7 +32,4 @@ class User
 		int getTTT();
 		short int getBTS();
 		long int getCurrentTime();
-
-		//TTT handling
-
 };

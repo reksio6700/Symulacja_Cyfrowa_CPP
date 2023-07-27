@@ -17,4 +17,5 @@ class Queue
 		bool push(User* u);
 		User* pop();
 		int size();
+		bool isFull();
 };

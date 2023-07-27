@@ -1,13 +1,6 @@
 #include "User.hpp"
 #include "Stats.hpp"
 
-std::random_device rd;
-std::mt19937 gen(rd());
-std::random_device rd2;
-std::mt19937 gen2(rd2());
-std::uniform_int_distribution<> uniform(5, 50);
-std::normal_distribution<> normal(0, 4);
-
 User::User()
 {
 	this->powerToBS1 = 0;
@@ -19,7 +12,7 @@ User::User()
 	this->currentTime = 0;
 }
 
-User::User(int newVelocity)
+User::User(int newVelocity, int time)
 {
 	this->powerToBS1 = -70.0;
 	this->powerToBS2 = -70.0;
@@ -27,7 +20,7 @@ User::User(int newVelocity)
 	this->distance = 2000.0;
 	this->TimeToSwitch = 0;
 	this->currentBTS = 1;
-	this->currentTime = 0;
+	this->currentTime = time;
 }
 
 User::~User()
@@ -61,12 +54,13 @@ void User::setTTT(int TTT)
 
 void User::setCurrentBTS(int BTS)
 {
-	assert(BTS >= 1 && BTS <= 2);
+	assert(BTS >= 1 && BTS <= 2); //BTS must be 1 or 2
 	this->currentBTS = BTS;
 }
 
 void User::setCurrentTime(long int time)
 {
+	assert(time >= CLOCK); //Time must be bigger than sim's clock
 	this->currentTime = time;
 }
 

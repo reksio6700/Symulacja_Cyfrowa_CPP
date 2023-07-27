@@ -6,7 +6,7 @@ std::exponential_distribution<> exponential(LAMBDA);
 
 Queue::Queue()
 {
-	this->maxSize = 1;
+	this->maxSize = MAXUSERS;
 }
 
 Queue::Queue(int size)
@@ -35,4 +35,10 @@ User* Queue::pop()
 int Queue::size()
 {
 	return this->fifo.size();
+}
+
+bool Queue::isFull()
+{
+	if(this->fifo.size() == this->maxSize) return true;
+	return false;
 }
