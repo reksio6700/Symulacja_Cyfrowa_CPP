@@ -10,5 +10,5 @@ class Simulator
 		Simulator();
 		~Simulator();
 
-		void run();
+		int run();
 };

@@ -5,7 +5,7 @@ class User
 	private:
 		double powerToBS1;
 		double powerToBS2;
-		int velocity;
+		double velocity;
 		double distance;
 		int TimeToSwitch; //TTT
 		short int currentBTS;
@@ -19,15 +19,16 @@ class User
 
 		void setBS1(int power);
 		void setBS2(int power);
-		void setVelocity(int v);
-		void setDistance(int d);
+		void setVelocity(double v);
+		void setDistance(double d);
 		void setTTT(int TTT);
+		void incTTT();
 		void setCurrentBTS(int BTS);
 		void setCurrentTime(long int time);
 
 		double getBS1();
 		double getBS2();
-		int getVelocity();
+		double getVelocity();
 		double getDistance();
 		int getTTT();
 		short int getBTS();

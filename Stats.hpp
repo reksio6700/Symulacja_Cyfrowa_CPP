@@ -1,20 +1,21 @@
 #pragma once
 
 #include <iostream>
+#include <math.h>
 #include <random>
 #include <fstream>
 #include <assert.h>
 
-extern int ALPHA;
-extern int DELTA;
-extern int TTT;
-extern int MAXUSERS;
-extern double LAMBDA;
+extern int ALPHA; //Switch threshold
+extern int DELTA; //Drop treshold
+extern int TTT; //ms to BS switch (20 ms equals 1 report)
+extern int MAXUSERS; //Active queue size limit
+extern double LAMBDA; //Traffic generation intensity
 
-extern long int CLOCK;
+extern long int CLOCK; //Main simulator clock
 
-extern bool DEBUG;
-extern bool WRITEFILE;
+extern bool DEBUG; //Print debug info
+extern bool WRITEFILE; //Write stats to text file
 
 class Statistics
 {

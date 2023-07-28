@@ -37,12 +37,12 @@ void User::setBS2(int power)
 	this->powerToBS2 = power;
 }
 
-void User::setVelocity(int v)
+void User::setVelocity(double v)
 {
 	this->velocity = v;
 }
 
-void User::setDistance(int d)
+void User::setDistance(double d)
 {
 	this->distance = d;
 }
@@ -52,9 +52,14 @@ void User::setTTT(int TTT)
 	this->TimeToSwitch = TTT;
 }
 
+void User::incTTT()
+{
+	this->TimeToSwitch++;
+}
+
 void User::setCurrentBTS(int BTS)
 {
-	assert(BTS >= 1 && BTS <= 2); //BTS must be 1 or 2
+	assert(BTS == 1 || BTS == 2); //BTS must be 1 or 2
 	this->currentBTS = BTS;
 }
 
@@ -74,7 +79,7 @@ double User::getBS2()
 	return this->powerToBS2;
 }
 
-int User::getVelocity()
+double User::getVelocity()
 {
 	return this->velocity;
 }
