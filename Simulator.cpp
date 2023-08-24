@@ -11,13 +11,21 @@ Simulator::~Simulator()
 
 int Simulator::run()
 {
+	//SEEDS
+	std::string str1 = "Frytki";
+	std::string str2 = "Chomicznik d¿ungarski";
+	std::string str3 = "Jan Pawe³ II";
+	std::seed_seq seed1(str1.begin(), str1.end());
+	std::seed_seq seed2(str2.begin(), str2.end());
+	std::seed_seq seed3(str3.begin(), str3.end());
+
 	//RNGs
-	std::random_device rd;
-	std::mt19937 gen(rd());
-	std::random_device rd2;
-	std::mt19937 gen2(rd2());
-	std::random_device rd3;
-	std::mt19937 gen3(rd3());
+	//std::random_device rd;
+	std::mt19937 gen(seed1);
+	//std::random_device rd2;
+	std::mt19937 gen2(seed2);
+	//std::random_device rd3;
+	std::mt19937 gen3(seed3);
 	std::uniform_int_distribution<int> uniform(5, 50);
 	std::normal_distribution<double> normal(0, 4);
 	std::exponential_distribution<double> exponential(LAMBDA);
@@ -27,7 +35,7 @@ int Simulator::run()
 	* Abort simulation if number of served users exceeds 'stop'.
 	* Change at your own risk.
 	*/
-	int stop = 1000;
+	int stop = 100;
 	/*
 	* Counts number of users waiting to enter the system.
 	* Computed on time difference between clock and active user's set time.
@@ -73,7 +81,7 @@ int Simulator::run()
 			//Compute time
 			timeBetweenUsers += currentUser->getCurrentTime() - CLOCK;
 			CLOCK = currentUser->getCurrentTime();
-			if (timeBetweenUsers > newUserIn)
+			if (timeBetweenUsers >= newUserIn)
 			{
 				timeBetweenUsers -= newUserIn;
 				newUsersCounter++;
@@ -127,7 +135,7 @@ int Simulator::run()
 		{
 			while( (this->queue.size() + 1) < MAXUSERS && newUsersCounter > 0)
 			{
-				this->queue.push(new User(uniform(gen), CLOCK + 1));
+				this->queue.push(new User(uniform(gen), CLOCK + 1)); //Consider 20 or 21
 				newUsersCounter--;
 
 				this->stats.decQueue();

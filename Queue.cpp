@@ -22,6 +22,7 @@ bool Queue::push(User* u)
 {
 	if (this->fifo.size() >= this->maxSize) return false;
 	this->fifo.push(u);
+	return true;
 }
 
 User* Queue::pop()
