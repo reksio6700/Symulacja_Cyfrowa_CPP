@@ -103,3 +103,8 @@ long int User::getCurrentTime()
 {
 	return this->currentTime;
 }
+
+bool compareUser::operator()(User* lhs, User* rhs)
+{
+	return lhs->getCurrentTime() > rhs->getCurrentTime();
+}

@@ -34,3 +34,8 @@ class User
 		short int getBTS();
 		long int getCurrentTime();
 };
+
+struct compareUser
+{
+	bool operator()(User* lhs, User* rhs);
+};

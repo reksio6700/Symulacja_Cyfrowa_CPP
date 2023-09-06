@@ -28,7 +28,8 @@ bool Queue::push(User* u)
 User* Queue::pop()
 {
 	if(this->fifo.empty()) return nullptr;
-	User* temp = this->fifo.front();
+	//User* temp = this->fifo.front();
+	User* temp = this->fifo.top();
 	this->fifo.pop();
 	return temp;
 }

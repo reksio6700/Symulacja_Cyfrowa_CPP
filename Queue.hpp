@@ -7,7 +7,8 @@ class Queue
 {
 	private:
 		int maxSize;
-		std::queue<User*> fifo;
+		//std::queue<User*> fifo;
+		std::priority_queue<User*, std::vector<User*>, compareUser > fifo;
 
 	public:
 		Queue();
