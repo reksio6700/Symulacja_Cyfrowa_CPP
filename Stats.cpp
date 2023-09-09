@@ -8,7 +8,7 @@ double LAMBDA = 0.1;
 
 long int CLOCK = 0;
 
-bool DEBUG = true;
+bool DEBUG = false;
 bool WRITEFILE = true;
 
 Statistics::Statistics()
