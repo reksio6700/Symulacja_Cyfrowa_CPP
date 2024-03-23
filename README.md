@@ -1,2 +1,3 @@
 # SC
-Wymagane wsparcie, please halp
+Projekt na przedmiot symulacja cyfrowa, reprezentująca system radiokomunikacyjny składający się z dwóch stacji bazowych BS1 i BS2, oddalonych od siebie o odległość 𝑙. W losowych odstępach czasu 𝜏 w systemie pojawiają się użytkownicy. System może jednocześnie obsługiwać 𝑛 użytkowników, każdy kolejny użytkownik trafia do kolejki, gdzie oczekuje na zwolnienie miejsca w systemie. Użytkownicy pojawiają się w odległości 𝑥 od BS1 i poruszają się z losową prędkością 𝑣 w kierunku BS2. Użytkownik opuszcza system, kiedy znajdzie się w odległości mniejszej niż 𝑥 od BS2. Użytkownik znajdujący się w systemie w stałych odstępach czasu 𝑡 raportuje moc odbieraną przez obsługującą go stację bazową i sąsiednią 
+stację bazow
